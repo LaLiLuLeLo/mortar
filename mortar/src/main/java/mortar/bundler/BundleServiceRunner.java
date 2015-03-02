@@ -47,6 +47,7 @@ public class BundleServiceRunner {
     return service;
   }
 
+
   /**
    * To be called from the host {@link android.app.Activity}'s {@link
    * android.app.Activity#onCreate}. Calls the registered {@link Bundler}'s {@link Bundler#onLoad}
@@ -63,6 +64,12 @@ public class BundleServiceRunner {
       }
     }
     finishLoading();
+  }
+
+  public void onStart(){
+    for (Map.Entry<String, BundleService> entry : scopedServices.entrySet()) {
+      entry.getValue().onStart();
+    }
   }
 
   /**

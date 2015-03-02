@@ -47,6 +47,8 @@ public interface Bundler {
    */
   void onLoad(Bundle savedInstanceState);
 
+  void onStart();
+
   /**
    * Called from the {@link BundleServiceRunner#onSaveInstanceState}, to allow the receiver
    * to save state before the process is killed. Note that receivers are likely to outlive multiple

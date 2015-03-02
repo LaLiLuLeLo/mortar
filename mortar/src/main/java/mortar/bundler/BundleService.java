@@ -136,4 +136,10 @@ public class BundleService {
       if (scope.isDestroyed()) return;
     }
   }
+
+  void onStart() {
+      for (Bundler bundler : bundlers) {
+          bundler.onStart();
+      }
+  }
 }

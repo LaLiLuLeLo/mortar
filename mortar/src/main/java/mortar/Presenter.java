@@ -37,6 +37,8 @@ public abstract class Presenter<V> {
       }
     }
 
+    @Override public void onStart() { Presenter.this.onStart(); }
+
     @Override public void onSave(Bundle outState) {
       Presenter.this.onSave(outState);
     }
@@ -133,6 +135,8 @@ public abstract class Presenter<V> {
    */
   protected void onLoad(Bundle savedInstanceState) {
   }
+
+  protected void onStart() {}
 
   /** Like {@link Bundler#onSave}. */
   protected void onSave(Bundle outState) {
